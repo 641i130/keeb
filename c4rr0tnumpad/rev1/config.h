@@ -25,7 +25,7 @@
 #define MATRIX_COL_PINS {B6, B2, B3, B1, F7}
 
 /* COL2ROW or ROW2COL */
-#define DIODE_DIRECTION ROW2COL
+#define DIODE_DIRECTION COL2ROW
 
 /* define if matrix has ghost */
 //#define MATRIX_HAS_GHOST
