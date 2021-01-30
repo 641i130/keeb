@@ -12,7 +12,7 @@
 #define DEVICE_VER      0x0100
 #define MANUFACTURER
 #define PRODUCT         c4r3t numpad
-#define DESCRIPTION     Carrot Numpad
+#define DESCRIPTION     Made by caret.
 
 /* key matrix size */
 // Rows are doubled-up
@@ -20,12 +20,18 @@
 #define MATRIX_COLS 5
 
 // wiring of each half
-// Numpad
+// LEFT HAND
+/*
+#define MATRIX_ROW_PINS {F4, F5, F6, F7, B1}
+#define MATRIX_COL_PINS {B4, E6, D7, C6, D4, D0, D1}
+*/
+// RIGHT HAND
 #define MATRIX_ROW_PINS {B5, B4, E6, D7, C6}
-#define MATRIX_COL_PINS {B6, B2, B3, B1, F7}
+//#define MATRIX_COL_PINS {B6, B2, B3, B1, F7}
+#define MATRIX_COL_PINS {F7, B1, B3, B2, B6}
 
 /* COL2ROW or ROW2COL */
-#define DIODE_DIRECTION ROW2COL
+#define DIODE_DIRECTION COL2ROW
 
 /* define if matrix has ghost */
 //#define MATRIX_HAS_GHOST
@@ -47,7 +53,7 @@
 /* ws2812 RGB LED */
 #define RGB_DI_PIN D3
 
-#define RGBLED_NUM 0    // Number of LEDs
+#define RGBLED_NUM 14    // Number of LEDs
 
 /*
  * Feature disable options
