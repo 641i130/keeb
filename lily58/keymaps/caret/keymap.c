@@ -21,7 +21,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|   `   |    | Layer?|------+------+------+------+------+------|
  * |LShift|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |  |   |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   | LAlt | LGUI |LOWER | /Space  /       \ENTER \  |BAKSP |RAISE | LOWER|
+ *                   | LAlt | LGUI |LCTRL | /Space  /       \ENTER \  |BAKSP |RAISE | LOWER|
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
@@ -29,8 +29,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  [_QWERTY] = LAYOUT( \
   KC_1,     KC_2,   KC_3,    KC_4,    KC_5,    KC_6,                     KC_7,    KC_8,    KC_9,    KC_0,    KC_LBRC, KC_RBRC,\
   KC_TAB,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINS, \
-  KC_ESC,KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
-  KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_GRV,  KC_F13,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,  KC_PIPE, \
+  KC_ESC,   KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
+  KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_GRV,  LT(_KC_F13,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,  KC_PIPE, \
                         LT(_LOWER,KC_LALT), KC_LGUI, KC_LCTRL, KC_SPC, KC_ENT, LT(_RAISE,KC_BSPC), MO(_RAISE), MO(_LOWER) \
 ),
 /* LOWER
@@ -107,7 +107,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
 static void print_status_narrow(void) {
     // Print current mode
-    oled_write_ln_P(PSTR("MODE"), false);
+    oled_write_ln_P(PSTR("MODE:"), false);
     switch (get_highest_layer(default_layer_state)) {
         case _QWERTY:
             oled_write_ln_P(PSTR("Qwrt"), false);
@@ -258,7 +258,7 @@ static void render_anim(void) {
              oled_write_raw_P(tap[abs((TAP_FRAMES-1)-current_tap_frame)], ANIM_SIZE);
          }
     }
-    if(get_current_wpm() != 000) {
+    if(get_current_wpm() != 0) {
         oled_on(); // not essential but turns on animation OLED with any alpha keypress
         if(timer_elapsed32(anim_timer) > ANIM_FRAME_DURATION) {
             anim_timer = timer_read32();
@@ -294,4 +294,4 @@ void oled_task_user(void) {
         //oled_write(wpm_str, false);
     }
 }
-
+}
