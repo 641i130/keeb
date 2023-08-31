@@ -1,0 +1,54 @@
+{
+    "keyboard_name": "Yozora Mel",
+    "manufacturer": "Yozora Mel",
+    "url": "",
+    "maintainer": "caret",
+    "usb": {
+        "vid": "0xFEED",
+        "pid": "0xBEEF",
+        "device_version": "1.0.0"
+    },
+    "matrix_pins": {
+        "cols": ["GP26", "GP18", "GP20", "GP19", "GP10"],
+        "rows": ["GP5", "GP6", "GP7", "GP8", "GP9"]
+    },
+    "diode_direction": "ROW2COL",
+    "processor": "RP2040",
+    "bootloader": "rp2040",
+    "keymap": "yozora_mel_numpad",
+    "layouts": {
+        "LAYOUT":{
+            "layout": [
+                {"matrix": [4, 0], "x": 4, "y": 0}, // a
+                {"matrix": [3, 0], "x": 3, "y": 0}, // b
+                {"matrix": [2, 0], "x": 2, "y": 0}, // c
+                {"matrix": [1, 0], "x": 1, "y": 0}, // d
+                {"matrix": [0, 0], "x": 0, "y": 0}, // e
+                
+                {"matrix": [4, 1], "x": 4, "y": 1},
+                {"matrix": [3, 1], "x": 3, "y": 1},
+                {"matrix": [2, 1], "x": 2, "y": 1},
+                {"matrix": [1, 1], "x": 1, "y": 1},
+                {"matrix": [0, 1], "x": 0, "y": 1}, 
+
+                {"matrix": [4, 2], "x": 4, "y": 2},
+                {"matrix": [3, 2], "x": 3, "y": 2},
+                {"matrix": [2, 2], "x": 2, "y": 2},
+                {"matrix": [1, 2], "x": 1, "y": 2},
+                {"matrix": [0, 2], "x": 0, "y": 2},
+               
+                {"matrix": [4, 3], "x": 4, "y": 3},
+                {"matrix": [3, 3], "x": 3, "y": 3},
+                {"matrix": [2, 3], "x": 2, "y": 3},
+                {"matrix": [1, 3], "x": 1, "y": 3},
+                {"matrix": [0, 3], "x": 0, "y": 3},
+               
+                {"matrix": [4, 4], "x": 4, "y": 4},
+                {"matrix": [3, 4], "x": 3, "y": 4},
+                {"matrix": [2, 4], "x": 2, "y": 4},
+                {"matrix": [1, 4], "x": 1, "y": 4},
+                {"matrix": [0, 4], "x": 0, "y": 4},
+            ]
+        }
+    }
+}
