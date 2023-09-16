@@ -1,35 +1,11 @@
 #include QMK_KEYBOARD_H
-#define _QWERTY 0
-#define _NEXT 1
-/*
-enum unicode_names {
-    ZeroWidth,
-   // IRONY,
-   SNEK
-};
 
-const uint32_t PROGMEM unicode_map[] = {
-    [ZeroWidth]  = 0x200B,  // Zero width spacer
-    //[IRONY] = 0x2E2E,  // ⸮
-    [SNEK]  = 0x1F40D, // 🐍
+enum layer_number {
+  _QWERTY = 0,
+  _NEXT,
 };
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-    case QMKBEST:
-        if (record->event.pressed) {
-            // when keycode QMKBEST is pressed
-            SEND_STRING("YEET");
-        } else {
-            // when keycode QMKBEST is released
-        }
-        break;
-    }
-    return true;
-};*/
 
 // LEFT
-
   const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWERTY] = LAYOUT( //Its actually DVORAK
     //┌────────┬────────┬────────┬────────┬────────┬────────┬────────┐
@@ -39,7 +15,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
        KC_ESC  ,KC_A    ,KC_O    ,KC_E    ,KC_U    ,KC_I    ,KC_HOME,
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_LSFT ,KC_SCOLON    ,KC_Q    ,KC_J    ,KC_K,KC_X,KC_END,
+       KC_LSFT ,KC_SCLN    ,KC_Q    ,KC_J    ,KC_K,KC_X,KC_END,
     //├────────┼────────┼────────┼────────┼────────┴────────┼────────┤
        KC_LCTL ,KC_LGUI ,KC_LALT ,MO(_NEXT),KC_SPACE,KC_SPACE,KC_BSPC
     //└────────┴────────┴────────┴───────────────────────────────────┘
@@ -63,9 +39,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────
        KC_F9  ,KC_F10    ,KC_F11,KC_F12    ,KC_F9   ,KC_F10    ,KC_F11,
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_F12 ,KC_A    ,KC_MEDIA_PREV_TRACK    ,KC_MEDIA_PLAY_PAUSE    ,KC_MEDIA_NEXT_TRACK    ,KC_RSFT,KC_RCTL,
+       KC_F12 ,KC_A    ,KC_MPRV ,KC_MPLY ,KC_MNXT,KC_RSFT,KC_RCTL,
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_LOCKING_SCROLL ,KC_SCOLON    ,KC__MUTE,KC__VOLDOWN,KC__VOLUP,KC_B    ,KC_END  ,
+       KC_SCRL ,KC_SCLN    ,KC_MUTE,KC_VOLD,KC_VOLU,KC_B    ,KC_END  ,
     //├────────┼────────┼────────┼────────┼────────┴────────┼────────┤
        KC_LCTL ,KC_LGUI ,KC_LALT ,MO(_NEXT),KC_SPACE,A(S(KC_F)),A(S(KC_D))
     //└────────┴────────┴────────┴───────────────────────────────────┘
