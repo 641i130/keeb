@@ -30,3 +30,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_TERM 200
 #define OLED_BRIGHTNESS 1
 #define SPLIT_WPM_ENABLE
+
+#define FORCE_NKRO
+#define COMBO_COUNT 1
