@@ -25,8 +25,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define QUICK_TAP_TERM 0
 //#define TAPPING_TERM 100
 
-#define FORCE_NKRO
-#define COMBO_COUNT 1
+//#define FORCE_NKRO
+//#define COMBO_COUNT 1
+#define COMBO_TERM 150
 
 #ifdef RGBLIGHT_ENABLE
     #define RGBLIGHT_EFFECT_BREATHING
