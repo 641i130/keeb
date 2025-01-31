@@ -11,7 +11,9 @@
     "matrix_pins": {
         "cols": ["GP28", "GP27", "GP26", "GP18", "GP20", "GP19", "GP10"],
         //"cols": ["GP10", "GP19", "GP20", "GP18", "GP26", "GP27", "GP28"], // RIGHT HAND FIRMWARE
-        "rows": ["GP5", "GP6", "GP7", "GP8", "GP9"]
+        //"rows": ["GP5", "GP6", "GP7", "GP8", "GP9"]
+        // we have GP3 left
+        "rows": ["GP5", "GP6", "GP7", "GP8", "GP2"] // went to GP4 to GP2
     },
     "diode_direction": "COL2ROW",
     "split": {

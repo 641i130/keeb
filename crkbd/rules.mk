@@ -1,0 +1,3 @@
+DEFAULT_FOLDER = crkbd/rev1
+COMBO_ENABLE = yes
+COMBO_TERM = 100
