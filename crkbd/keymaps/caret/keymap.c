@@ -3,21 +3,21 @@
 #    include "keymap.h"
 #endif
 
-const uint16_t PROGMEM test_combo1[] = {KC_E, KC_U, COMBO_END};
-combo_t key_combos[] = {
-    COMBO(test_combo1, LCTL(KC_W)),
-};
+//const uint16_t PROGMEM test_combo1[] = {KC_E, KC_U, COMBO_END};
+//combo_t key_combos[] = {
+//    COMBO(test_combo1, LCTL(KC_W)),
+//};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_TAB, KC_QUOT, KC_COMM,  KC_DOT,    KC_P,    KC_Y,                         KC_F,    KC_G,    KC_C,    KC_R,    KC_L, KC_SLSH,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-  LT(2,KC_ESC),   KC_A,    KC_O,    KC_E,    KC_U,    KC_I,                         KC_D,    KC_H,    KC_T,    KC_N,    KC_S, KC_MINS,
+       KC_ESC,   KC_A,    KC_O,    KC_E,    KC_U,    KC_I,                         KC_D,    KC_H,    KC_T,    KC_N,    KC_S, KC_MINS,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, KC_SCLN,    KC_Q,    KC_J,    KC_K,     KC_X,                        KC_B,    KC_M,    KC_W,    KC_V,    KC_Z, KC_BSLS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LCTL, KC_SPC, LT(1,KC_LGUI), LT(2,KC_BSPC), LT(3,KC_ENT), TG(4)
+                                        KC_LGUI  ,KC_LCTL,LT(1,KC_SPC),LT(2,KC_BSPC), LT(3,KC_ENT), TG(4)
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -53,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         KC_NO, MEH(KC_Z), KC_MUTE, KC_VOLD, KC_VOLU, LSA(KC_A),                   KC_END, KC_LCTL, KC_PGDN, KC_PGUP, KC_DEL,    KC_NO,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
+                                          KC_LGUI, KC_LCTL, KC_SPC, KC_BSPC, KC_NO, KC_NO
                                       //`--------------------------'  `--------------------------'
   ),
   [4] = LAYOUT_split_3x6_3(
@@ -64,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH  , KC_NO,
     //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                            KC_LGUI, KC_NO, KC_SPC, KC_BSPC, LT(3,KC_ENT), TG(0)
+                                            KC_LGUI, KC_LCTL, KC_SPC, KC_BSPC, LT(3,KC_ENT), TG(0)
                                         //`--------------------------'  `--------------------------'
     )
 };
