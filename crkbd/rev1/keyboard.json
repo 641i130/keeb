@@ -5,7 +5,12 @@
     "device_version": "0.0.1"
   },
   "features": {
-    "rgblight": true
+    "bootmagic": true,
+    "extrakey": true,
+    "nkro": true,
+    "oled": false,
+    "rgblight": false,
+    "rgb_matrix": false
   },
   "build": {
     "lto": true
